@@ -26,7 +26,7 @@ public class Empresa {
 		this.funcionarios = funcionarios;
 	}
 	
-	private boolean passivelAdmissao(Terceirizado Terceirizado){
+	private boolean passivelAdmissao(){
 		int totalFuncionario = funcionarios.size();
 		int totalTerceirizado =0;
 		for (int i =0 ; i < funcionarios.size(); i++){
@@ -34,7 +34,7 @@ public class Empresa {
 			
 		}
 	
-		double percentagemTerceirizado = (totalTerceirizado/totalFuncionario)*100;
+		double percentagemTerceirizado = (totalTerceirizado/totalFuncionario) * 100;
 		
 		if (percentagemTerceirizado <=30){
 			return true;
@@ -46,7 +46,7 @@ public class Empresa {
 	public void admitirFuncionario(Funcionario funcionario){
 		// testar se quantidade de terceirizado não ultrapassa os 30%
 		if (funcionario instanceof Terceirizado){
-			if ( ! passivelAdmissao((Terceirizado) funcionario)){				
+			if ( ! passivelAdmissao()){				
 				System.out.println("Funcionario terceirizado não pode ser admitido");
 				return; // levantar uma exceção aqui
 			}			
