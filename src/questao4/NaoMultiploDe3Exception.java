@@ -1,4 +1,4 @@
-package questao3;
+package questao4;
 
 public class NaoMultiploDe3Exception extends Exception {
 	private int linha;

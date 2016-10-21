@@ -1,4 +1,4 @@
-package questao1;
+package questao1e2;
 
 import java.util.ArrayList;
 
@@ -27,33 +27,31 @@ public class Empresa {
 	}
 	
 	private boolean passivelAdmissao(){
-		int totalFuncionario = funcionarios.size();
-		int totalTerceirizado =0;
-		for (int i =0 ; i < funcionarios.size(); i++){
-			totalTerceirizado ++;
+		// inicia com pelo menos um terceirizado, já que o esse metodo é chamando somente se for terceirizado e ele ainda não foi admitido
+		int totalTerceirizado = 1;
+		int totalFuncionario = funcionarios.size() + totalTerceirizado;
+		for (int i =0 ; i < funcionarios.size(); i++){			
+			if (funcionarios.get(i) instanceof Terceirizado){				
+				totalTerceirizado ++;
+			}			
+		}	
+		double percentagemTerceirizado = ((double)totalTerceirizado/(double)totalFuncionario) * 100;
 			
-		}
-	
-		double percentagemTerceirizado = (totalTerceirizado/totalFuncionario) * 100;
-		
 		if (percentagemTerceirizado <=30){
 			return true;
 		}else
-			return false;
-		
+			return false;		
 	}
 	
-	public void admitirFuncionario(Funcionario funcionario){
+	public void admitirFuncionario(Funcionario funcionario) throws ProibidaAdmissaoException {
 		// testar se quantidade de terceirizado não ultrapassa os 30%
 		if (funcionario instanceof Terceirizado){
 			if ( ! passivelAdmissao()){				
-				System.out.println("Funcionario terceirizado não pode ser admitido");
-				return; // levantar uma exceção aqui
+				throw new ProibidaAdmissaoException(funcionario.getNome());
 			}			
-		}
-		
+		}		
 		funcionarios.add(funcionario);
-		System.out.println("Funcionario admitido com sucesso");						
+		System.out.println("Funcionario " + funcionario.getNome() + " admitido com sucesso");						
 	}
 	
 	public void demitirFuncionarnio(int matricula){
@@ -61,7 +59,7 @@ public class Empresa {
 		for (int i =0 ; i < funcionarios.size(); i++){
 			if (funcionarios.get(i).getMatricula() == matricula){
 				funcionarios.remove(i);
-				System.out.println("Funcionario demitido com sucesso");
+				System.out.println("Funcionario " + funcionarios.get(i).getNome() + " demitido com sucesso");
 				break;
 			}						
 		}		

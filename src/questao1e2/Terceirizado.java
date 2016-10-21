@@ -1,4 +1,4 @@
-package questao1;
+package questao1e2;
 
 public class Terceirizado extends Funcionario {
 	
@@ -11,11 +11,11 @@ public class Terceirizado extends Funcionario {
 	}
 	
 	public void receberValeTransporte(){
-		System.out.println("Recebendo vale transporte.");
+		System.out.println("Funcionario: " + this.getNome() + " Recebendo vale transporte.");
 	}
 	
 	public void receberValeAlimentacao(){
-		System.out.println("Recebendo vale alimentação.");
+		System.out.println("Funcionario: " + this.getNome() + " Recebendo vale alimentação.");
 	}
 	
 	

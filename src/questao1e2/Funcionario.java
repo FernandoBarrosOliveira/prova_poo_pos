@@ -1,4 +1,4 @@
-package questao1;
+package questao1e2;
 
 public class Funcionario implements Trabalhador {
 	private int matricula;
@@ -43,7 +43,7 @@ public class Funcionario implements Trabalhador {
 
 
 	public void receberSalario(){
-		System.out.println("Recebendo salário");
+		System.out.println("Funcionario: " + this.nome + " Recebendo salário");
 	}
 	
 	

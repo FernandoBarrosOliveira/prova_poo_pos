@@ -1,4 +1,4 @@
-package questao2;
+package questao3;
 import java.util.Random;
 import java.text.NumberFormat;
 public class ThreadPrincipal implements Runnable{

@@ -1,4 +1,4 @@
-package questao2;
+package questao3;
 
 public class Empregado {
 	
