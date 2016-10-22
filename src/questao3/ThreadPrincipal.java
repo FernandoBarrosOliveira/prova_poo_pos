@@ -3,7 +3,7 @@ import java.util.Random;
 import java.text.NumberFormat;
 public class ThreadPrincipal implements Runnable{
 	
-	private Empregado[] empregados = new Empregado[1000]; 
+  private Empregado[] empregados = new Empregado[1000]; 
 	
    void preencheArray(){
 		

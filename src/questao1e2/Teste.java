@@ -5,7 +5,7 @@ public class Teste {
 	public static void main(String[] args) {
 		Funcionario funcionario;
 		Empresa empresa = new Empresa("Matriz");
-		try{
+		try{			
 			funcionario = new Funcionario(1, "Fernando");
 			empresa.admitirFuncionario(funcionario);
 			
@@ -23,6 +23,9 @@ public class Teste {
 			empresa.demitirFuncionarnio(1);
 			
 			funcionario = new Terceirizado(5, "Brasil", "Empresa de Terceirização");
+			empresa.admitirFuncionario(funcionario);
+			
+			funcionario = new Terceirizado(6, "Brasil", "Empresa de Terceirização");
 			empresa.admitirFuncionario(funcionario);
 			
 			funcionario = new Terceirizado(6, "Brasil", "Empresa de Terceirização");

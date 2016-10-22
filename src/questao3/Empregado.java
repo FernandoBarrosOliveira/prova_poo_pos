@@ -24,8 +24,7 @@ public class Empregado {
 	}
 	
 	 public double salarioBruto(){
-		 return this.salarioLiquido + this.comissao;
-		 
+		 return this.salarioLiquido + this.comissao;		
 	 }
 	 
 	 public double percentualComissao(){

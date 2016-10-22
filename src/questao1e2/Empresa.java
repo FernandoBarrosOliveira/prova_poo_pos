@@ -27,16 +27,18 @@ public class Empresa {
 	}
 	
 	private boolean passivelAdmissao(){
-		// inicia com pelo menos um terceirizado, já que o esse metodo é chamando somente se for terceirizado e ele ainda não foi admitido
+		if (funcionarios.size()<=0)
+			return false;	
+		// inicia com pelo menos um terceirizado, já que o esse metodo 
+		//é chamando somente se for terceirizado e ele ainda não foi admitido		
 		int totalTerceirizado = 1;
-		int totalFuncionario = funcionarios.size() + totalTerceirizado;
+		int totalFuncionario = funcionarios.size() + 1;
 		for (int i =0 ; i < funcionarios.size(); i++){			
 			if (funcionarios.get(i) instanceof Terceirizado){				
 				totalTerceirizado ++;
 			}			
-		}	
-		double percentagemTerceirizado = ((double)totalTerceirizado/(double)totalFuncionario) * 100;
-			
+		}		
+		double percentagemTerceirizado = ((double)totalTerceirizado/(double)totalFuncionario) * 100;			
 		if (percentagemTerceirizado <=30){
 			return true;
 		}else
